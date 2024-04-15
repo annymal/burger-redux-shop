@@ -1,0 +1,21 @@
+ul {
+	margin: 0;
+	padding: 3rem;
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	li {
+		display: flex;
+		gap: 20px;
+		svg:hover {
+			color: red;
+		}
+	}
+}
+header {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background: black;
+	color: white;
+}
