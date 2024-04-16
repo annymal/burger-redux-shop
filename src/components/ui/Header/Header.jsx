@@ -1,16 +1,18 @@
-import styles from './Header.module.scss'
-import { Heart, Home, Pizza, ShoppingBasket } from 'lucide-react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+
+import { Heart, Home, Pizza, ShoppingBasket } from 'lucide-react'
+
+import styles from './Header.module.scss'
 
 const Header = () => {
 	const { cart } = useSelector(store => store.cart)
 	return (
-		<header>
-			<div className={styles.logo}>
-				<Pizza />
-			</div>
+		<nav className={styles.header}>
 			<ul>
+				<div className={styles.logo}>
+					<Pizza />
+				</div>
 				<li>
 					<NavLink to='/'>
 						<Home />
@@ -25,7 +27,7 @@ const Header = () => {
 					</NavLink>
 				</li>
 			</ul>
-		</header>
+		</nav>
 	)
 }
 

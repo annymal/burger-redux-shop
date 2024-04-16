@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import styles from './Layout.module.scss'
-import { Heart, ShoppingBasket } from 'lucide-react'
 import { useDispatch } from 'react-redux'
+
+import { Heart, ShoppingBasket } from 'lucide-react'
+
 import { addToCart } from '../../../features/cart/cartSlice'
-// import CartBtn from '../../cart/CartBtn'
+import styles from './Layout.module.scss'
 
 const FoodItems = ({ price, image, title, id }) => {
 	const dispatch = useDispatch()
@@ -25,7 +26,6 @@ const FoodItems = ({ price, image, title, id }) => {
 			<h2>{title}</h2>
 			<span className={styles.price}>RUB {price}</span>
 			<div className={styles.actions}>
-				{/* <CartBtn /> */}
 				<button onClick={onClickAdd}>
 					<ShoppingBasket size={32} />
 					<span></span>

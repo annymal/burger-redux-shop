@@ -1,12 +1,18 @@
 import React from 'react'
-import styles from './CartModal.module.scss'
 
-const CartItems = ({ price, title }) => {
-	console.log(name)
+import styles from './CartItems.module.scss'
+
+const CartItems = ({ price, title, image }) => {
 	return (
 		<>
-			<div>{title}</div>
-			<div>{price}</div>
+			<div className={styles.container}>
+				<div className={styles.foodItem}>
+					<img src={image} alt='food-img' />
+					<h3>{title}</h3>
+					<h3>RUB {price}</h3>
+					<input type='number' />
+				</div>
+			</div>
 		</>
 	)
 }

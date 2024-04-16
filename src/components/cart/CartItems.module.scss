@@ -1,0 +1,31 @@
+.container {
+	display: flex;
+	justify-content: center;
+}
+.foodItem {
+	display: flex;
+	gap: 30px;
+	padding: 10px;
+	img {
+		max-width: 300px;
+		height: auto;
+	}
+}
+.foodInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+input[type='number'] {
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	max-height: 20px;
+	width: 70px;
+}
+
+input[type='number']:focus {
+	border-color: red;
+	box-shadow: 0 0 5px red; /* Тень при фокусе */
+	outline: none; /* Убираем стандартный контур при фокусе */
+}

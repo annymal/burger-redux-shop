@@ -1,14 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import styles from './CartModal.module.scss'
+
 import { addToCart } from '../../features/cart/cartSlice'
 import CartItems from './CartItems'
+import styles from './CartPage.module.scss'
 
-const CartModal = () => {
+const CartPage = () => {
 	const { cart } = useSelector(store => store.cart)
 
-	let amount = 1
-	if (amount < 1) {
+	if (cart.length < 1) {
 		return (
 			<section className={styles.modal_container}>
 				<header className={styles.modal}>
@@ -20,17 +20,18 @@ const CartModal = () => {
 	}
 
 	return (
-		<section className={styles.modal_container}>
-			<header className={styles.modal}>
+		<section className={styles.basket_container}>
+			<header>
 				<h2>Корзина</h2>
 			</header>
 			{cart.map((item, index) => (
-				<CartItems key={index} price={item.price} title={item.title} />
+				<CartItems key={index} {...item} />
 			))}
+			<hr />
 			<footer className={styles.cartFooter}>
 				<div className={styles.cartTotal}>
 					<h4>
-						total: <span>RUB</span>
+						Итого: <span>RUB</span>
 					</h4>
 				</div>
 				<button className={styles.clearBtn}>clear cart</button>
@@ -38,4 +39,4 @@ const CartModal = () => {
 		</section>
 	)
 }
-export default CartModal
+export default CartPage

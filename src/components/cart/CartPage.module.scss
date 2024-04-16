@@ -1,0 +1,28 @@
+.basket_container {
+	background: pink;
+	header {
+		background: none;
+		color: black;
+		padding: 2rem;
+	}
+}
+hr {
+	color: black;
+}
+.cartFooter {
+	background: none;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	gap: 30px;
+	h4 {
+		color: black;
+	}
+}
+.cartTotal {
+	margin-top: 1rem;
+}
+.clearBtn {
+	max-width: 150px;
+	height: 100%;
+}

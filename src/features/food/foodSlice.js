@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+
 import foodItems from '../../foodItems'
 
 const initialState = {

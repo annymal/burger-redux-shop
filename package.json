@@ -8,7 +8,8 @@
 		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
-		"format": "prettier --write \"src/**/*.jsx\""
+		"format": "prettier --write \"src/**/*.jsx\"",
+		"prettier": "prettier --write ."
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.2.3",
@@ -21,6 +22,7 @@
 		"sass": "^1.75.0"
 	},
 	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"@types/react": "^18.2.66",
 		"@types/react-dom": "^18.2.22",
 		"@vitejs/plugin-react-swc": "^3.5.0",

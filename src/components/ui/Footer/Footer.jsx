@@ -1,6 +1,8 @@
-import styles from './Footer.module.scss'
 import { Link } from 'react-router-dom'
-import { Instagram } from 'lucide-react'
+
+import { Facebook, Instagram, Twitter } from 'lucide-react'
+
+import styles from './Footer.module.scss'
 
 const Footer = () => {
 	return (
@@ -9,6 +11,12 @@ const Footer = () => {
 			<ul className={styles.socials}>
 				<li>
 					<Instagram />
+				</li>
+				<li>
+					<Facebook />
+				</li>
+				<li>
+					<Twitter />
 				</li>
 			</ul>
 		</footer>
