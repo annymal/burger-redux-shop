@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import {
+	calculateTotals,
 	decreaseItem,
 	increaseItem,
 	removeItem
@@ -10,13 +11,14 @@ import styles from './CartItems.module.scss'
 
 const CartItems = ({ price, title, image, amount, id }) => {
 	const dispatch = useDispatch()
+
 	return (
 		<>
 			<div className={styles.container}>
 				<div className={styles.foodItem}>
 					<img src={image} alt='food-img' />
 					<h3>{title}</h3>
-					<h3>RUB {price}</h3>
+					<h3>RUB {price * amount}</h3>
 					<div>
 						<button onClick={() => dispatch(increaseItem({ id }))}>
 							+

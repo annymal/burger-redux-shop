@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { addToCart } from '../../features/cart/cartSlice'
+import { addToCart, calculateTotals } from '../../features/cart/cartSlice'
 import CartItems from './CartItems'
 import styles from './CartPage.module.scss'
 
 const CartPage = () => {
-	const { cart } = useSelector(store => store.cart)
+	const { cartItems, totals } = useSelector(store => store.cart)
+	const dispatch = useDispatch()
 
-	if (cart.length < 1) {
+	// useEffect(() => {
+	// 	dispatch(calculateTotals())
+	// }, [cartItems])
+
+	if (cartItems.length < 1) {
 		return (
 			<section className={styles.modal_container}>
 				<header className={styles.modal}>
@@ -24,14 +29,14 @@ const CartPage = () => {
 			<header>
 				<h2>Корзина</h2>
 			</header>
-			{cart.map((item, index) => (
+			{cartItems.map((item, index) => (
 				<CartItems key={index} {...item} />
 			))}
 			<hr />
 			<footer className={styles.cartFooter}>
 				<div className={styles.cartTotal}>
 					<h4>
-						Итого: <span>RUB</span>
+						Итого: <span>{totals}RUB</span>
 					</h4>
 				</div>
 				<button className={styles.clearBtn}>clear cart</button>

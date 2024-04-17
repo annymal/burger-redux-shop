@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Heart, ShoppingBasket } from 'lucide-react'
 
@@ -7,21 +7,24 @@ import { addToCart, increaseItem } from '../../../features/cart/cartSlice'
 import styles from './Layout.module.scss'
 
 const FoodItems = ({ price, image, title, id, amount }) => {
+	const { cartItems } = useSelector(store => store.cart)
 	const dispatch = useDispatch()
 
 	const onClickAdd = () => {
-		console.log(amount)
-		const item = {
-			id,
-			title,
-			price,
-			image,
-			amount
-		}
-		dispatch(addToCart(item))
-		if (item.amount > 0) {
-			console.log(item)
+		const existingItem = cartItems.find(item => item.id === id)
+		if (existingItem) {
+			// Товар уже есть в корзине, увеличим его количество на 1
 			dispatch(increaseItem({ id }))
+		} else {
+			// Товара нет в корзине, добавим его
+			const newItem = {
+				id,
+				title,
+				price,
+				image,
+				amount: 1
+			}
+			dispatch(addToCart(newItem))
 		}
 	}
 

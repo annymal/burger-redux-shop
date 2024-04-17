@@ -6,7 +6,7 @@ import { Heart, Home, Pizza, ShoppingBasket } from 'lucide-react'
 import styles from './Header.module.scss'
 
 const Header = () => {
-	const { cart } = useSelector(store => store.cart)
+	const { cartItems } = useSelector(store => store.cart)
 	return (
 		<nav className={styles.header}>
 			<ul>
@@ -19,7 +19,7 @@ const Header = () => {
 					</NavLink>
 					<NavLink to='/cart'>
 						<ShoppingBasket />
-						<span>{cart.length}</span>
+						<span>{cartItems.length}</span>
 					</NavLink>
 
 					<NavLink to='/favorites'>
