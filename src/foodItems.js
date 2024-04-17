@@ -4,6 +4,7 @@ const foodItems = [
 		title: 'Beef Burger',
 		price: 675,
 		type: 'burger',
+		amount: 1,
 		image: '/img/beefburg.jpg'
 	},
 	{
@@ -11,6 +12,7 @@ const foodItems = [
 		title: 'Chicken Burger',
 		price: 827,
 		type: 'burger',
+		amount: 1,
 		image: '/img/chickenburg.jpg'
 	},
 	{
@@ -18,6 +20,7 @@ const foodItems = [
 		title: 'BigMac Burger',
 		price: 1080,
 		type: 'burger',
+		amount: 1,
 		image: '/img/bigmac.jpg'
 	},
 	{
@@ -25,6 +28,7 @@ const foodItems = [
 		title: 'CheeseBurger',
 		price: 230,
 		type: 'burger',
+		amount: 1,
 		image: '/img/cheeseburg.jpg'
 	},
 	{
@@ -32,6 +36,7 @@ const foodItems = [
 		title: 'Chicken',
 		price: 700,
 		type: 'chicken',
+		amount: 1,
 		image: '/img/chicken.jpg'
 	},
 	{
@@ -39,6 +44,7 @@ const foodItems = [
 		title: 'Coca Cola',
 		price: 500,
 		type: 'drink',
+		amount: 1,
 		image: '/img/cola.jpg'
 	}
 ]

@@ -3,21 +3,26 @@ import { useDispatch } from 'react-redux'
 
 import { Heart, ShoppingBasket } from 'lucide-react'
 
-import { addToCart } from '../../../features/cart/cartSlice'
+import { addToCart, increaseItem } from '../../../features/cart/cartSlice'
 import styles from './Layout.module.scss'
 
-const FoodItems = ({ price, image, title, id }) => {
+const FoodItems = ({ price, image, title, id, amount }) => {
 	const dispatch = useDispatch()
 
 	const onClickAdd = () => {
+		console.log(amount)
 		const item = {
 			id,
 			title,
 			price,
-			image
+			image,
+			amount
 		}
 		dispatch(addToCart(item))
-		console.log(item)
+		if (item.amount > 0) {
+			console.log(item)
+			dispatch(increaseItem({ id }))
+		}
 	}
 
 	return (
