@@ -1,6 +1,5 @@
 .container {
-	display: flex;
-	justify-content: center;
+	padding: 3rem;
 }
 .foodItem {
 	display: flex;
@@ -16,16 +15,29 @@
 	flex-direction: column;
 }
 
-input[type='number'] {
-	padding: 5px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	max-height: 20px;
-	width: 70px;
+.quantityBlock {
+	margin: auto;
+	font-size: 20px;
 }
-
+.quantityBtn {
+	cursor: pointer;
+	font-size: 20px;
+	padding: 5px 12px;
+	width: 40px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	border: none;
+	outline: none;
+}
+.quantityNum {
+	text-align: center;
+	width: 50px;
+	font-size: 20px;
+	padding: 5px 10px;
+	border-radius: 4px;
+	outline: none;
+}
 input[type='number']:focus {
 	border-color: red;
-	box-shadow: 0 0 5px red; /* Тень при фокусе */
 	outline: none; /* Убираем стандартный контур при фокусе */
 }

@@ -14,7 +14,6 @@ const cartSlice = createSlice({
 			state.cartItems.push(action.payload)
 		},
 		increaseItem: (state, { payload }) => {
-			console.log({ payload })
 			const cartItem = state.cartItems.find(
 				item => item.id === payload.id
 			)
@@ -39,13 +38,15 @@ const cartSlice = createSlice({
 			state.cartItems.forEach(item => {
 				amount += item.amount
 				total += item.amount * item.price
-				console.log(amount)
 			})
-			state.cartItems.amount = amount
-			state.cartItems.total = total
+			state.totals = {
+				amount: amount,
+				total: total
+			}
 		}
 	}
 })
+
 export default cartSlice.reducer
 export const {
 	addToCart,

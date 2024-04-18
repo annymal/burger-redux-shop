@@ -34,11 +34,13 @@ const FoodItems = ({ price, image, title, id, amount }) => {
 			<h2>{title}</h2>
 			<span className={styles.price}>RUB {price}</span>
 			<div className={styles.actions}>
-				<button onClick={onClickAdd}>
-					<ShoppingBasket size={32} />
-					<span></span>
+				<button className={styles.btnBuy} onClick={onClickAdd}>
+					<ShoppingBasket />
+					<p>Купить</p>
 				</button>
-				<Heart size={32} />
+				<button className={styles.btnFavorite}>
+					<Heart />
+				</button>
 			</div>
 		</article>
 	)

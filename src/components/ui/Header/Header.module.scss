@@ -6,15 +6,28 @@ ul {
 	justify-content: space-between;
 	li {
 		display: flex;
-		gap: 20px;
+		gap: 30px;
 		svg:hover {
 			color: red;
 		}
 		a {
 			color: white;
+			position: relative;
+			span {
+				background: red;
+				border-radius: 8px;
+				color: #fff;
+				height: 16px;
+				line-height: 17px;
+				padding: 1px 8px;
+				position: absolute;
+				left: 1.3rem;
+				top: -5px;
+			}
 		}
 	}
 }
+
 .header {
 	position: sticky;
 	top: 0;

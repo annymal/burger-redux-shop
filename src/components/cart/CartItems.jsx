@@ -20,20 +20,30 @@ const CartItems = ({ price, title, image, amount, id }) => {
 					<h3>{title}</h3>
 					<h3>RUB {price * amount}</h3>
 					<div>
-						<button onClick={() => dispatch(increaseItem({ id }))}>
-							+
-						</button>
-						<input value={amount} type='number' />
-						<button
-							onClick={() => {
-								if (amount === 1) {
-									dispatch(removeItem(id))
-								}
-								dispatch(decreaseItem({ id }))
-							}}
-						>
-							-
-						</button>
+						<div className={styles.quantityBlock}>
+							<button
+								className={styles.quantityBtn}
+								onClick={() => dispatch(increaseItem({ id }))}
+							>
+								+
+							</button>
+							<input
+								className={styles.quantityNum}
+								value={amount}
+								type='number'
+							/>
+							<button
+								className={styles.quantityBtn}
+								onClick={() => {
+									if (amount === 1) {
+										dispatch(removeItem(id))
+									}
+									dispatch(decreaseItem({ id }))
+								}}
+							>
+								-
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>

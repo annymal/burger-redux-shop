@@ -1,7 +1,6 @@
 .layout {
 	padding: 30px 0;
 	color: black;
-	background: rgb(164, 158, 158);
 }
 .img {
 	width: 400px;
@@ -32,9 +31,34 @@
 }
 .actions {
 	display: flex;
-	gap: 30px;
+	gap: 40px;
 	justify-content: center;
-	svg:hover {
+}
+.btnBuy {
+	width: 100%;
+	color: white;
+	background-color: rgb(201, 35, 35);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.btnBuy:hover {
+	background-color: rgb(227, 42, 42);
+}
+
+.btnFavorite {
+	width: 100%;
+	background: #ffffff99;
+	color: rgb(201, 35, 35);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.btnFavorite:hover {
+	svg {
 		color: red;
 	}
 }

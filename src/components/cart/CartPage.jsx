@@ -7,11 +7,12 @@ import styles from './CartPage.module.scss'
 
 const CartPage = () => {
 	const { cartItems, totals } = useSelector(store => store.cart)
-	const dispatch = useDispatch()
 
-	// useEffect(() => {
-	// 	dispatch(calculateTotals())
-	// }, [cartItems])
+	useEffect(() => {
+		dispatch(calculateTotals())
+	}, [cartItems])
+
+	const dispatch = useDispatch()
 
 	if (cartItems.length < 1) {
 		return (
@@ -36,7 +37,7 @@ const CartPage = () => {
 			<footer className={styles.cartFooter}>
 				<div className={styles.cartTotal}>
 					<h4>
-						Итого: <span>{totals}RUB</span>
+						Итого: <span>{totals.total} RUB</span>
 					</h4>
 				</div>
 				<button className={styles.clearBtn}>clear cart</button>
