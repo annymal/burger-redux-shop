@@ -1,5 +1,8 @@
+import { useEffect } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { CSSTransition } from 'react-transition-group'
 
 import { Heart, Home, Pizza, ShoppingBasket } from 'lucide-react'
 
@@ -7,6 +10,16 @@ import styles from './Header.module.scss'
 
 const Header = () => {
 	const { cartItems } = useSelector(store => store.cart)
+
+	const [triggerAnimation, setTriggerAnimation] = useState(false)
+
+	useEffect(() => {
+		setTriggerAnimation(true)
+		setTimeout(() => {
+			setTriggerAnimation(false)
+		}, 300)
+	}, [cartItems.length])
+
 	return (
 		<nav className={styles.header}>
 			<ul>
@@ -19,13 +32,21 @@ const Header = () => {
 					</NavLink>
 					<NavLink to='/cart'>
 						<ShoppingBasket />
-						<span
-							className={
-								cartItems.length > 0 ? styles.cartIndicator : ''
-							}
+						<CSSTransition
+							in={triggerAnimation}
+							classNames='cartItem'
+							timeout={300}
 						>
-							{cartItems.length > 0 ? cartItems.length : ''}
-						</span>
+							<span
+								className={
+									cartItems.length > 0
+										? styles.cartIndicator
+										: ''
+								}
+							>
+								{cartItems.length > 0 ? cartItems.length : ''}
+							</span>
+						</CSSTransition>
 					</NavLink>
 
 					<NavLink to='/favorites'>

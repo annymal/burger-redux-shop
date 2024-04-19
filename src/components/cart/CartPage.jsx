@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 import { Trash2 } from 'lucide-react'
 
@@ -52,7 +53,9 @@ const CartPage = () => {
 						Итого: <span>{totals.total} RUB</span>
 					</h4>
 				</div>
-				<button className={styles.btnBuy}>Перейти к оформлению</button>
+				<button className={styles.btnBuy}>
+					<NavLink to='/order'>Перейти к оформлению</NavLink>
+				</button>
 			</footer>
 		</section>
 	)

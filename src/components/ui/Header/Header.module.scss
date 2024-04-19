@@ -25,6 +25,7 @@ ul {
 	color: white;
 }
 .cartIndicator {
+	animation: itemAdded 0.5s ease-in-out;
 	background: red;
 	border-radius: 8px;
 	color: #fff;
@@ -35,3 +36,13 @@ ul {
 	left: 1.3rem;
 	top: -5px;
 }
+// @keyframes itemAdded {
+// 	0% {
+// 		opacity: 0;
+// 		transform: translateY(-20px);
+// 	}
+// 	100% {
+// 		opacity: 1;
+// 		transform: translateY(0);
+// 	}
+// }
