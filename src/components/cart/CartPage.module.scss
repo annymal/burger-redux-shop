@@ -6,6 +6,14 @@
 		padding: 2rem;
 	}
 }
+.deleteBlock {
+	display: flex;
+	padding: 1rem;
+	justify-content: end;
+	button {
+		background: none;
+	}
+}
 hr {
 	color: black;
 }
@@ -22,7 +30,14 @@ hr {
 .cartTotal {
 	margin-top: 1rem;
 }
-.clearBtn {
-	max-width: 150px;
-	height: 100%;
+
+.btnBuy {
+	padding: 1rem;
+	background-color: red;
+	color: white;
+}
+.btnDelete {
+	svg:hover {
+		color: red;
+	}
 }

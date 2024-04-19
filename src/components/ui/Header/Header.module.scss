@@ -13,17 +13,6 @@ ul {
 		a {
 			color: white;
 			position: relative;
-			span {
-				background: red;
-				border-radius: 8px;
-				color: #fff;
-				height: 16px;
-				line-height: 17px;
-				padding: 1px 8px;
-				position: absolute;
-				left: 1.3rem;
-				top: -5px;
-			}
 		}
 	}
 }
@@ -34,4 +23,15 @@ ul {
 	width: 100%;
 	background: black;
 	color: white;
+}
+.cartIndicator {
+	background: red;
+	border-radius: 8px;
+	color: #fff;
+	height: 16px;
+	line-height: 17px;
+	padding: 1px 8px;
+	position: absolute;
+	left: 1.3rem;
+	top: -5px;
 }

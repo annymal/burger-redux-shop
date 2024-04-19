@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { addToCart, calculateTotals } from '../../features/cart/cartSlice'
+import { Trash2 } from 'lucide-react'
+
+import { calculateTotals, removeItem } from '../../features/cart/cartSlice'
 import CartItems from './CartItems'
 import styles from './CartPage.module.scss'
 
 const CartPage = () => {
 	const { cartItems, totals } = useSelector(store => store.cart)
+	// const [checked, setChecked] = useState(false)
+	const dispatch = useDispatch()
 
 	useEffect(() => {
 		dispatch(calculateTotals())
 	}, [cartItems])
-
-	const dispatch = useDispatch()
 
 	if (cartItems.length < 1) {
 		return (
@@ -30,9 +32,19 @@ const CartPage = () => {
 			<header>
 				<h2>Корзина</h2>
 			</header>
+			<div className={styles.deleteBlock}>
+				<button
+					className={styles.btnDelete}
+					onClick={() => dispatch(removeItem())}
+				>
+					<Trash2 size={28} />
+				</button>
+			</div>
+
 			{cartItems.map((item, index) => (
 				<CartItems key={index} {...item} />
 			))}
+
 			<hr />
 			<footer className={styles.cartFooter}>
 				<div className={styles.cartTotal}>
@@ -40,7 +52,7 @@ const CartPage = () => {
 						Итого: <span>{totals.total} RUB</span>
 					</h4>
 				</div>
-				<button className={styles.clearBtn}>clear cart</button>
+				<button className={styles.btnBuy}>Перейти к оформлению</button>
 			</footer>
 		</section>
 	)

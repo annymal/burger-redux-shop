@@ -10,7 +10,6 @@ const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addToCart: (state, action) => {
-			console.log(action)
 			state.cartItems.push(action.payload)
 		},
 		increaseItem: (state, { payload }) => {
@@ -28,9 +27,8 @@ const cartSlice = createSlice({
 			)
 			cartItem.amount = cartItem.amount - 1
 		},
-		removeItem: (state, action) => {
-			const itemId = action.payload
-			state.cartItems = state.cartItems.filter(item => item.id !== itemId)
+		removeItem: state => {
+			state.cartItems = state.cartItems.filter(item => !item.isChecked) //фильтруем, оставляем все, где isChecked == false. isChecked==true -убираем
 		},
 		calculateTotals: state => {
 			let total = 0
@@ -43,6 +41,12 @@ const cartSlice = createSlice({
 				amount: amount,
 				total: total
 			}
+		},
+		toggleChecked: (state, { payload }) => {
+			const cartItem = state.cartItems.find(
+				item => item.id === payload.id
+			)
+			cartItem.isChecked = !cartItem.isChecked
 		}
 	}
 })
@@ -53,5 +57,6 @@ export const {
 	increaseItem,
 	decreaseItem,
 	removeItem,
+	toggleChecked,
 	calculateTotals
 } = cartSlice.actions

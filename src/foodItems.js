@@ -5,7 +5,8 @@ const foodItems = [
 		price: 675,
 		type: 'burger',
 		amount: 1,
-		image: '/img/beefburg.jpg'
+		image: '/img/beefburg.jpg',
+		isChecked: false
 	},
 	{
 		id: 2,
@@ -13,7 +14,8 @@ const foodItems = [
 		price: 827,
 		type: 'burger',
 		amount: 1,
-		image: '/img/chickenburg.jpg'
+		image: '/img/chickenburg.jpg',
+		isChecked: false
 	},
 	{
 		id: 3,
@@ -21,7 +23,8 @@ const foodItems = [
 		price: 1080,
 		type: 'burger',
 		amount: 1,
-		image: '/img/bigmac.jpg'
+		image: '/img/bigmac.jpg',
+		isChecked: false
 	},
 	{
 		id: 4,
@@ -29,7 +32,8 @@ const foodItems = [
 		price: 230,
 		type: 'burger',
 		amount: 1,
-		image: '/img/cheeseburg.jpg'
+		image: '/img/cheeseburg.jpg',
+		isChecked: false
 	},
 	{
 		id: 5,
@@ -37,7 +41,8 @@ const foodItems = [
 		price: 700,
 		type: 'chicken',
 		amount: 1,
-		image: '/img/chicken.jpg'
+		image: '/img/chicken.jpg',
+		isChecked: false
 	},
 	{
 		id: 6,
@@ -45,7 +50,8 @@ const foodItems = [
 		price: 500,
 		type: 'drink',
 		amount: 1,
-		image: '/img/cola.jpg'
+		image: '/img/cola.jpg',
+		isChecked: false
 	}
 ]
 export default foodItems

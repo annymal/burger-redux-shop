@@ -1,8 +1,6 @@
-.container {
-	padding: 3rem;
-}
 .foodItem {
-	display: flex;
+	display: grid;
+	grid-template-columns: 50px repeat(4, 250px);
 	gap: 30px;
 	padding: 10px;
 	img {
@@ -40,4 +38,8 @@
 input[type='number']:focus {
 	border-color: red;
 	outline: none; /* Убираем стандартный контур при фокусе */
+}
+.input {
+	width: 20px;
+	height: 20px;
 }

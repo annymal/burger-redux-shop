@@ -19,7 +19,13 @@ const Header = () => {
 					</NavLink>
 					<NavLink to='/cart'>
 						<ShoppingBasket />
-						<span>{cartItems.length}</span>
+						<span
+							className={
+								cartItems.length > 0 ? styles.cartIndicator : ''
+							}
+						>
+							{cartItems.length > 0 ? cartItems.length : ''}
+						</span>
 					</NavLink>
 
 					<NavLink to='/favorites'>

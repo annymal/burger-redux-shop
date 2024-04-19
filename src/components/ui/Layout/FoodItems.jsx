@@ -6,7 +6,7 @@ import { Heart, ShoppingBasket } from 'lucide-react'
 import { addToCart, increaseItem } from '../../../features/cart/cartSlice'
 import styles from './Layout.module.scss'
 
-const FoodItems = ({ price, image, title, id, amount }) => {
+const FoodItems = ({ price, image, title, id, amount, isChecked }) => {
 	const { cartItems } = useSelector(store => store.cart)
 	const dispatch = useDispatch()
 
@@ -22,7 +22,8 @@ const FoodItems = ({ price, image, title, id, amount }) => {
 				title,
 				price,
 				image,
-				amount: 1
+				amount: 1,
+				isChecked: false
 			}
 			dispatch(addToCart(newItem))
 		}
