@@ -1,13 +1,8 @@
 .layout {
-	padding: 30px 0;
 	color: black;
 }
-.img {
-	width: 400px;
-	display: block;
-	height: auto;
-}
 .food_container {
+	padding: 1rem;
 	max-width: 1280px;
 	margin: 0 auto;
 	display: grid;
@@ -15,50 +10,4 @@
 	gap: 30px;
 	justify-content: center;
 	text-align: center;
-}
-.food_item {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	h2 {
-		margin: 0;
-	}
-}
-.price {
-	font-size: 18px;
-	font-weight: 500;
-	text-align: center;
-}
-.actions {
-	display: flex;
-	gap: 40px;
-	justify-content: center;
-}
-.btnBuy {
-	width: 100%;
-	color: white;
-	background-color: rgb(201, 35, 35);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-}
-.btnBuy:hover {
-	background-color: rgb(227, 42, 42);
-}
-
-.btnFavorite {
-	width: 100%;
-	background: #ffffff99;
-	color: rgb(201, 35, 35);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-}
-
-.btnFavorite:hover {
-	svg {
-		color: red;
-	}
 }

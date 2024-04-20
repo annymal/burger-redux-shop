@@ -1,22 +1,24 @@
 .basket_container {
 	background: rgb(164, 158, 158);
+	color: black;
+
 	header {
 		background: none;
-		color: black;
-		padding: 2rem;
+		padding: 1rem 0;
 	}
 }
 .deleteBlock {
+	padding: 1rem 0;
 	display: flex;
-	padding: 1rem;
-	justify-content: end;
+	justify-content: start;
 	button {
 		background: none;
 	}
 }
-hr {
-	color: black;
+.btnDelete {
+	color: var(--primary-color);
 }
+
 .cartFooter {
 	background: none;
 	align-items: center;
@@ -33,11 +35,9 @@ hr {
 
 .btnBuy {
 	padding: 1rem;
-	background-color: red;
+	background-color: var(--primary-color);
 	color: white;
 }
-.btnDelete {
-	svg:hover {
-		color: red;
-	}
+.btnBuy:hover {
+	background: var(--primary-color-hover);
 }

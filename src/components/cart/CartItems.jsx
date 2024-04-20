@@ -22,7 +22,7 @@ const CartItems = ({ price, title, image, amount, id, isChecked }) => {
 					<div>
 						<label>
 							<input
-								className={styles.input}
+								className={styles.checkbox}
 								onChange={handleCheckboxChange}
 								type='checkbox'
 							/>

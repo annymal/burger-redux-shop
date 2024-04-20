@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-
-import { Trash2 } from 'lucide-react'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import { calculateTotals, removeItem } from '../../features/cart/cartSlice'
 import CartItems from './CartItems'
@@ -10,8 +8,8 @@ import styles from './CartPage.module.scss'
 
 const CartPage = () => {
 	const { cartItems, totals } = useSelector(store => store.cart)
-	// const [checked, setChecked] = useState(false)
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		dispatch(calculateTotals())
@@ -38,7 +36,7 @@ const CartPage = () => {
 					className={styles.btnDelete}
 					onClick={() => dispatch(removeItem())}
 				>
-					<Trash2 size={28} />
+					Удалить выбранные
 				</button>
 			</div>
 
@@ -53,7 +51,10 @@ const CartPage = () => {
 						Итого: <span>{totals.total} RUB</span>
 					</h4>
 				</div>
-				<button className={styles.btnBuy}>
+				<button
+					onClick={() => navigate('/order')}
+					className={styles.btnBuy}
+				>
 					<NavLink to='/order'>Перейти к оформлению</NavLink>
 				</button>
 			</footer>

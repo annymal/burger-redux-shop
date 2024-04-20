@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Heart, ShoppingBasket } from 'lucide-react'
 
 import { addToCart, increaseItem } from '../../../features/cart/cartSlice'
-import styles from './Layout.module.scss'
+import styles from './FoodItems.module.scss'
 
 const FoodItems = ({ price, image, title, id, amount, isChecked }) => {
 	const { cartItems } = useSelector(store => store.cart)
@@ -31,7 +31,7 @@ const FoodItems = ({ price, image, title, id, amount, isChecked }) => {
 
 	return (
 		<article className={styles.food_item}>
-			<img className={styles.img} src={image} alt='food' />
+			<img src={image} alt='food' />
 			<h2>{title}</h2>
 			<span className={styles.price}>RUB {price}</span>
 			<div className={styles.actions}>

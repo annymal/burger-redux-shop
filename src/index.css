@@ -7,6 +7,8 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	--primary-color: rgb(201, 35, 35);
+	--primary-color-hover: rgb(227, 42, 42);
 }
 
 button {
@@ -27,6 +29,7 @@ h3,
 h4 {
 	margin: 0;
 	text-align: center;
+	color: inherit;
 }
 input {
 	box-sizing: border-box;
@@ -36,9 +39,11 @@ input {
 a,
 a:active {
 	text-decoration: none;
+	color: inherit;
 }
 section {
 	background: rgb(164, 158, 158);
+	padding: 2rem;
 }
 .cartItem-enter {
 	opacity: 0;
@@ -60,4 +65,14 @@ section {
 
 .cartItem-exit-active {
 	opacity: 1;
+}
+input[type='number']:focus,
+input[type='text']:focus,
+input[type='tel']:focus {
+	border-color: red;
+	outline: none; /* Убираем стандартный контур при фокусе */
+}
+textarea:focus {
+	border-color: red;
+	outline: none;
 }
