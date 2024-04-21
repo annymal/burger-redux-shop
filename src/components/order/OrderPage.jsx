@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import OrderItem from './OrderItem'
@@ -9,37 +9,100 @@ const OrderPage = () => {
 	let deliveryPrice = 600
 	let summary = deliveryPrice + totals.total
 
+	const [formData, setFormData] = useState({})
+
+	const handleChange = e => {
+		const name = e.target.name
+		const value = e.target.value
+		setFormData(values => ({
+			...values,
+			[name]: value
+		}))
+	}
+
+	const handleSubmit = e => {
+		e.preventDefault()
+		console.log('Отправка данных:', formData)
+	}
+
 	return (
 		<section>
 			<h2>Оформление заказа</h2>
 			<div className={styles.orderContainer}>
 				<div>
 					<h3>Ваши контакты</h3>
-					<form className={styles.formOrder}>
+					<form onSubmit={handleSubmit} className={styles.formOrder}>
 						<div className={styles.formGroupFlex}>
-							<label htmlFor='name'></label>
-							<input type='text' placeholder='Введите имя' />
-							<label htmlFor='phone'></label>
-							<input type='tel' placeholder='Введите телефон' />
+							<label htmlFor='name'>Имя*</label>
+							<input
+								name='username'
+								value={formData.username}
+								onChange={handleChange}
+								required
+								type='text'
+								placeholder='Введите имя'
+							/>
+							<label htmlFor='phone'>Телефон*</label>
+							<input
+								name='telephone'
+								value={formData.telephone}
+								onChange={handleChange}
+								required
+								type='tel'
+								placeholder='Введите телефон'
+							/>
 						</div>
 						<div className={styles.formGroup}>
-							<label htmlFor='address'></label>
-							<input type='text' placeholder='Введите адрес' />
+							<label htmlFor='address'>Адрес</label>
+							<input
+								name='address'
+								value={formData.address}
+								onChange={handleChange}
+								type='text'
+								placeholder='Введите адрес'
+							/>
 						</div>
 						<div className={styles.formGroupFlex}>
-							<label htmlFor='entrance'></label>
-							<input type='number' placeholder='Подъезд' />
-							<label htmlFor='floor'></label>
-							<input type='number' placeholder='Этаж' />
+							<label htmlFor='entrance'>Подъезд</label>
+							<input
+								name='entrance'
+								value={formData.entrance}
+								onChange={handleChange}
+								required
+								type='number'
+								placeholder='Подъезд'
+							/>
+							<label htmlFor='floor'>Этаж</label>
+							<input
+								name='floor'
+								value={formData.floor}
+								onChange={handleChange}
+								type='number'
+								placeholder='Номер этажа'
+							/>
 						</div>
 						<div className={styles.formGroup}>
-							<label htmlFor='apartment'></label>
-							<input type='number' placeholder='Квартира' />
+							<label htmlFor='apartment'>Квартира</label>
+							<input
+								name='apartment'
+								value={formData.apartment}
+								onChange={handleChange}
+								type='number'
+								placeholder='Введите номер квартиры'
+							/>
 						</div>
 						<div className={styles.formGroup}>
-							<label htmlFor='comments'></label>
-							<textarea placeholder='Комментарии к заказу'></textarea>
+							<label htmlFor='comments'>
+								Комментарии к заказу
+							</label>
+							<textarea
+								name='comments'
+								value={formData.comments}
+								onChange={handleChange}
+								placeholder='Ваши пожелания к заказу'
+							></textarea>
 						</div>
+						<input type='submit' />
 					</form>
 				</div>
 				<div className={styles.summaryList}>

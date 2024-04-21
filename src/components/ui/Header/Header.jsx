@@ -10,15 +10,24 @@ import styles from './Header.module.scss'
 
 const Header = () => {
 	const { cartItems } = useSelector(store => store.cart)
+	const { favoriteItems } = useSelector(store => store.favorite)
 
-	const [triggerAnimation, setTriggerAnimation] = useState(false)
+	const [animationOnCart, setAnimationOnCart] = useState(false)
+	const [animationOnFavorite, setAnimationOnFavorite] = useState(false)
 
 	useEffect(() => {
-		setTriggerAnimation(true)
+		setAnimationOnCart(true)
 		setTimeout(() => {
-			setTriggerAnimation(false)
+			setAnimationOnCart(false)
 		}, 300)
 	}, [cartItems.length])
+
+	useEffect(() => {
+		setAnimationOnFavorite(true)
+		setTimeout(() => {
+			setAnimationOnFavorite(false)
+		}, 300)
+	}, [favoriteItems.length])
 
 	return (
 		<nav className={styles.header}>
@@ -33,15 +42,13 @@ const Header = () => {
 					<NavLink to='/cart'>
 						<ShoppingBasket />
 						<CSSTransition
-							in={triggerAnimation}
+							in={animationOnCart}
 							classNames='cartItem'
 							timeout={300}
 						>
 							<span
 								className={
-									cartItems.length > 0
-										? styles.cartIndicator
-										: ''
+									cartItems.length > 0 ? styles.indicator : ''
 								}
 							>
 								{cartItems.length > 0 ? cartItems.length : ''}
@@ -51,6 +58,23 @@ const Header = () => {
 
 					<NavLink to='/favorites'>
 						<Heart />
+						<CSSTransition
+							in={animationOnFavorite}
+							classNames='cartItem'
+							timeout={300}
+						>
+							<span
+								className={
+									favoriteItems.length > 0
+										? styles.indicator
+										: ''
+								}
+							>
+								{favoriteItems.length > 0
+									? favoriteItems.length
+									: ''}
+							</span>
+						</CSSTransition>
 					</NavLink>
 				</li>
 			</ul>

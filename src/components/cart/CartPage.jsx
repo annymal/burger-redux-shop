@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 
+import { ShoppingBasket } from 'lucide-react'
+
 import { calculateTotals, removeItem } from '../../features/cart/cartSlice'
 import CartItems from './CartItems'
 import styles from './CartPage.module.scss'
@@ -18,9 +20,14 @@ const CartPage = () => {
 	if (cartItems.length < 1) {
 		return (
 			<section className={styles.modal_container}>
-				<header className={styles.modal}>
-					<h2>your bag</h2>
-					<h4 className='empty-cart'> is currently empty</h4>
+				<header className={styles.cartHeader}>
+					<h2>Корзина пуста</h2>
+					<h3 className='empty-cart'>
+						Добавляйте товары с помощью <ShoppingBasket />
+					</h3>
+					<h4>
+						Перейти в <NavLink to='/'>главное меню</NavLink>
+					</h4>
 				</header>
 			</section>
 		)

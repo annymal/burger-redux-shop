@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 
-import FoodItems from './FoodItems'
+import FoodItems from '../../food/FoodItems'
 import styles from './Layout.module.scss'
 
 const Layout = () => {

@@ -8,7 +8,7 @@ const favoriteSlice = createSlice({
 	initialState,
 	reducers: {
 		addToFavorites: (state, action) => {
-			state.favoriteItems = state.favoriteItems.push(action.payload)
+			state.favoriteItems.push(action.payload)
 		},
 		removeFavoriteItem: (state, { payload }) => {
 			state.favoriteItems = state.favoriteItems.filter(

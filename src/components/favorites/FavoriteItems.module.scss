@@ -1,0 +1,35 @@
+.favorite_item {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 1rem;
+	img {
+		width: 250px;
+		border: 1px solid white;
+		position: relative;
+	}
+	span {
+		margin: 1rem;
+		position: absolute;
+		color: red;
+	}
+}
+.actions {
+	padding: 1rem;
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+}
+.btnBuy {
+	color: white;
+	background-color: var(--primary-color);
+}
+.btnBuy:hover {
+	background-color: var(--primary-color-hover);
+}

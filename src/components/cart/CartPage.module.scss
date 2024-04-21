@@ -1,3 +1,8 @@
+.cartHeader {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
 .basket_container {
 	background: rgb(164, 158, 158);
 	color: black;
@@ -40,4 +45,13 @@
 }
 .btnBuy:hover {
 	background: var(--primary-color-hover);
+}
+h4 {
+	a {
+		color: white;
+		text-decoration: underline;
+	}
+	a:hover {
+		color: var(--primary-color-hover);
+	}
 }
