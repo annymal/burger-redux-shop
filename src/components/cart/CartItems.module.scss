@@ -18,8 +18,9 @@
 }
 
 .quantityBlock {
-	margin: auto;
 	font-size: 20px;
+	display: flex;
+	gap: 10px;
 	button:disabled {
 		background-color: rgb(240, 240, 240, 0.5);
 		color: rgba(16, 16, 16, 0.5);
@@ -28,7 +29,7 @@
 .quantityBtn {
 	cursor: pointer;
 	font-size: 20px;
-	padding: 5px 12px;
+	padding: 6px 12px;
 	width: 40px;
 	box-sizing: border-box;
 	border-radius: 0;
@@ -37,6 +38,8 @@
 }
 
 .quantityNum {
+	background:none;
+	color: white;
 	text-align: center;
 	width: 50px;
 	font-size: 20px;

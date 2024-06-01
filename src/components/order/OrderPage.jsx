@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 
 import OrderItem from './OrderItem'
 import styles from './OrderPage.module.scss'
+import { NavLink } from 'react-router-dom'
 
 const OrderPage = () => {
 	const { cartItems, totals } = useSelector(store => store.cart)
@@ -48,7 +49,7 @@ const OrderPage = () => {
 								value={formData.telephone}
 								onChange={handleChange}
 								required
-								type='tel'
+								type='number'
 								placeholder='Введите телефон'
 							/>
 						</div>
@@ -58,6 +59,7 @@ const OrderPage = () => {
 								name='address'
 								value={formData.address}
 								onChange={handleChange}
+								required
 								type='text'
 								placeholder='Введите адрес'
 							/>
@@ -102,7 +104,7 @@ const OrderPage = () => {
 								placeholder='Ваши пожелания к заказу'
 							></textarea>
 						</div>
-						<input type='submit' />
+						<NavLink to='/complete'><button className='btn-primary' type='submit'>Оформить заказ</button></NavLink>
 					</form>
 				</div>
 				<div className={styles.summaryList}>

@@ -1,0 +1,15 @@
+.completeOrderBlock {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.number {
+    color: white;
+    font-weight: 700;
+}
+.orderList {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: white;
+}

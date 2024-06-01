@@ -7,6 +7,7 @@ import OrderPage from './components/order/OrderPage'
 import Footer from './components/ui/Footer/Footer'
 import Header from './components/ui/Header/Header'
 import Layout from './components/ui/Layout/Layout'
+import CompleteOrder from './components/order/CompleteOrder'
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Route path='/cart' element={<CartPage />} />
 				<Route path='/favorites' element={<FavoritesPage />} />
 				<Route path='/order' element={<OrderPage />} />
+				<Route path='/complete' element={<CompleteOrder />} />
 			</Routes>
 			<Footer />
 		</>
