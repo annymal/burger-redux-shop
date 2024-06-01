@@ -1,4 +1,4 @@
-footer {
+.footerBlock {
 	padding: 1rem;
 	background: black;
 	color: white;
@@ -10,6 +10,7 @@ footer {
 	// bottom: 0;
 }
 .socials {
+	list-style: none;
 	margin-right: 25px;
 	text-decoration: none;
 	text-shadow: 0 1px 2px rgb(0 0 0 / 10%);

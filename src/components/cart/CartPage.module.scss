@@ -2,10 +2,10 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	color: #FBFADA;
 }
 .basket_container {
-	background: rgb(164, 158, 158);
-	color: black;
+	color: #FBFADA;
 
 	header {
 		background: none;
@@ -21,7 +21,7 @@
 	}
 }
 .btnDelete {
-	color: var(--primary-color);
+	color: white;
 }
 
 .cartFooter {
@@ -30,28 +30,14 @@
 	justify-content: center;
 	display: flex;
 	gap: 30px;
-	h4 {
-		color: black;
-	}
 }
 .cartTotal {
 	margin-top: 1rem;
 }
 
-.btnBuy {
-	padding: 1rem;
-	background-color: var(--primary-color);
-	color: white;
-}
-.btnBuy:hover {
-	background: var(--primary-color-hover);
-}
 h4 {
 	a {
 		color: white;
 		text-decoration: underline;
-	}
-	a:hover {
-		color: var(--primary-color-hover);
 	}
 }

@@ -20,12 +20,13 @@ const CartItems = ({ price, title, image, amount, id, isChecked }) => {
 			<div className={styles.container}>
 				<div className={styles.foodItem}>
 					<div>
-						<label>
+						<label className='custom-checkbox'>
 							<input
-								className={styles.checkbox}
+								className='black-checkbox'
 								onChange={handleCheckboxChange}
 								type='checkbox'
 							/>
+							<span className='checkmark'></span>
 						</label>
 					</div>
 					<img src={image} alt='food-img' />

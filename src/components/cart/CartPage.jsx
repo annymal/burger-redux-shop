@@ -54,13 +54,13 @@ const CartPage = () => {
 			<hr />
 			<footer className={styles.cartFooter}>
 				<div className={styles.cartTotal}>
-					<h4>
-						Итого: <span>{totals.total} RUB</span>
-					</h4>
+					<h3>
+						Итого: <strong>{totals.total} RUB</strong>
+					</h3>
 				</div>
 				<button
 					onClick={() => navigate('/order')}
-					className={styles.btnBuy}
+					className='btn-primary'
 				>
 					<NavLink to='/order'>Перейти к оформлению</NavLink>
 				</button>

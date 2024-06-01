@@ -8,6 +8,7 @@ const Layout = () => {
 
 	return (
 		<section className={styles.layout}>
+			<h2>Menu</h2>
 			<div className={styles.food_container}>
 				{foodItems.map((item, index) => (
 					<FoodItems key={index} {...item} />

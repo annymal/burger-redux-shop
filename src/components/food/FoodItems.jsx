@@ -45,7 +45,7 @@ const FoodItems = ({ price, image, title, id, amount, isChecked }) => {
 
 	return (
 		<article className={styles.food_item}>
-			<img src={image} alt='food' />
+			<img className={styles.food_img} src={image} alt='food' />
 			<h3>{title}</h3>
 			<h3>RUB {price}</h3>
 			<div className={styles.actions}>

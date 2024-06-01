@@ -129,7 +129,7 @@ const OrderPage = () => {
 				</div>
 			</div>
 			<div className={styles.btnContainer}>
-				<button type='submit'>Оформить заказ</button>
+				<button className='btn-primary' type='submit'>Оформить заказ</button>
 			</div>
 		</section>
 	)

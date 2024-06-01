@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 
-import { Heart, Home, Pizza, ShoppingBasket } from 'lucide-react'
-
 import styles from './Header.module.scss'
 
 const Header = () => {
@@ -30,17 +28,17 @@ const Header = () => {
 	}, [favoriteItems.length])
 
 	return (
-		<nav className={styles.header}>
-			<ul>
+		<header className={styles.headerMenu}>
+			<ul className={styles.headerList}>
 				<div className={styles.logo}>
-					<Pizza />
+					<h2 className={styles.logo_header}>Burgur</h2>
 				</div>
-				<li>
+				<li className={styles.headerLi}>
 					<NavLink to='/'>
-						<Home />
+						Home
 					</NavLink>
 					<NavLink to='/cart'>
-						<ShoppingBasket />
+						Basket
 						<CSSTransition
 							in={animationOnCart}
 							classNames='cartItem'
@@ -57,7 +55,7 @@ const Header = () => {
 					</NavLink>
 
 					<NavLink to='/favorites'>
-						<Heart />
+						Favorites
 						<CSSTransition
 							in={animationOnFavorite}
 							classNames='cartItem'
@@ -78,7 +76,7 @@ const Header = () => {
 					</NavLink>
 				</li>
 			</ul>
-		</nav>
+		</header>
 	)
 }
 

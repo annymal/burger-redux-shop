@@ -6,17 +6,23 @@ import styles from './Footer.module.scss'
 
 const Footer = () => {
 	return (
-		<footer>
+		<footer className={styles.footerBlock}>
 			<p>Связаться с нами</p>
 			<ul className={styles.socials}>
 				<li>
-					<Instagram />
+					<Link to=''>
+						<Instagram />
+					</Link>
 				</li>
 				<li>
-					<Facebook />
+					<Link to=''>
+						<Facebook />
+					</Link>
 				</li>
 				<li>
-					<Twitter />
+					<Link to=''>
+						<Twitter />
+					</Link>
 				</li>
 			</ul>
 		</footer>

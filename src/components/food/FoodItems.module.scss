@@ -1,18 +1,27 @@
 .food_item {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
-	img {
-		width: 400px;
-		display: block;
-		height: auto;
-	}
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	// background-color: #3c5f55;
+	background: rgb(60,95,85);
+	// background: linear-gradient(180deg, rgba(60,95,85,1) 0%, rgb(1, 1, 1, 0.5) 75%);
+	border-radius: 20px;	
+}
+
+.food_img {
+	width: 100%;
+	display: block;
+	height: auto;
 }
 .actions {
 	display: flex;
-	gap: 40px;
+	gap: 20px;
 	justify-content: center;
+
 	button {
+		background: none;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -24,14 +33,10 @@
 
 .btnBuy {
 	color: white;
-	background-color: var(--primary-color);
-}
-.btnBuy:hover {
-	background-color: var(--primary-color-hover);
+	
 }
 
 .btnFavorite {
-	background: #ffffff99;
 	color: var(--primary-color);
 }
 .btnFavorite:hover {

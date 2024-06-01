@@ -11,22 +11,19 @@ const FavoritesPage = () => {
 
 	if (favoriteItems.length < 1) {
 		return (
-			<section>
-				<header>
-					<h2>В избранном пусто</h2>
-					<h4>
-						Добавляйте товары с помощью <Heart />
-					</h4>
-				</header>
+			<section className={styles.favoriteEmpty}>
+				<h2>В избранном пусто</h2>
+				<h4>
+					Добавляйте товары с помощью <Heart />
+				</h4>
 			</section>
 		)
 	}
 
 	return (
 		<section className={styles.basket_container}>
-			<header>
-				<h2>Избранное</h2>
-			</header>
+			<h2>Избранное</h2>
+
 			<div className={styles.favorites_container}>
 				{favoriteItems.map((item, index) => (
 					<FavoriteItems key={index} {...item} />

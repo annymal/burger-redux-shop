@@ -1,28 +1,26 @@
-ul {
+.headerList {
 	margin: 0;
-	padding: 3rem;
+	padding: 20px;
 	display: flex;
 	list-style: none;
 	justify-content: space-between;
 	li {
 		display: flex;
 		gap: 30px;
-		svg:hover {
-			color: red;
-		}
 		a {
-			color: white;
+			color: inherit;
 			position: relative;
+			cursor: pointer;
 		}
 	}
 }
 
-.header {
+.headerMenu {
 	position: sticky;
 	top: 0;
 	width: 100%;
-	background: black;
-	color: white;
+	background: #12372a;
+	color: #fbfada;
 }
 
 .indicator {
@@ -30,9 +28,9 @@ ul {
 	border-radius: 8px;
 	color: #fff;
 	height: 16px;
-	line-height: 17px;
-	padding: 1px 8px;
+	line-height: 12px;
+	padding: 2px 8px;
 	position: absolute;
-	left: 1.5rem;
-	top: -10px;
+	left: 26px;
+	top: -16px;
 }

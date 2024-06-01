@@ -6,4 +6,10 @@
 	flex-wrap: wrap;
 	gap: 30px;
 	text-align: center;
+	color:#fbfada;
+}
+.favoriteEmpty {
+	svg {
+		color: var(--primary-color);
+	}
 }

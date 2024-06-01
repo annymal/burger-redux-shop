@@ -22,7 +22,7 @@ const FavoriteItems = ({ image, title, price, id }) => {
 			<div className={styles.actions}>
 				<button
 					onClick={() => navigate('/cart')}
-					className={styles.btnBuy}
+					className='btn-primary'
 				>
 					<ShoppingBasket />
 					Купить

@@ -63,12 +63,4 @@
 .btnContainer {
 	display: flex;
 	justify-content: center;
-	button {
-		background: var(--primary-color);
-		color: white;
-		padding: 1rem;
-	}
-	button:hover {
-		background: var(--primary-color-hover);
-	}
 }

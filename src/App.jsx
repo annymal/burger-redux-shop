@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 
-import './App.css'
+import './App.scss'
 import CartPage from './components/cart/CartPage'
 import FavoritesPage from './components/favorites/FavoritesPage'
 import OrderPage from './components/order/OrderPage'
