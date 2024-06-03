@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { Heart, ShoppingBasket } from 'lucide-react'
 
-import { addToCart, increaseItem } from '../../features/cart/cartSlice'
-import { addToFavorites } from '../../features/favorite/favoriteSlice'
+import { addToCart, increaseItem } from '../../store/reducers/cart/cartSlice'
+import { addToFavorites } from '../../store/reducers/favorite/favoriteSlice'
 import styles from './FoodItems.module.scss'
 
 const FoodItems = ({ price, image, title, id, amount, isChecked }) => {

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
+import FoodItems from '../../../components/food/FoodItems'
 
-import foodItems from '../../foodItems'
 
 const initialState = {
-	foodItems: foodItems,
+	foodItems: FoodItems,
 	amount: 1,
 	total: 0
 }

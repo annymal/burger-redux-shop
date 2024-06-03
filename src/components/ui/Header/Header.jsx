@@ -1,14 +1,20 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 
 import styles from './Header.module.scss'
+import { calculateTotals } from '../../../store/reducers/cart/cartSlice'
 
 const Header = () => {
-	const { cartItems } = useSelector(store => store.cart)
+	const { cartItems, totals } = useSelector(store => store.cart)
 	const { favoriteItems } = useSelector(store => store.favorite)
+	const dispatch= useDispatch()
+
+	useEffect(() => {
+		dispatch(calculateTotals())
+	}, [cartItems])
 
 	const [animationOnCart, setAnimationOnCart] = useState(false)
 	const [animationOnFavorite, setAnimationOnFavorite] = useState(false)
@@ -49,7 +55,7 @@ const Header = () => {
 									cartItems.length > 0 ? styles.indicator : ''
 								}
 							>
-								{cartItems.length > 0 ? cartItems.length : ''}
+								{cartItems.length > 0 ? totals.amount : ''}
 							</span>
 						</CSSTransition>
 					</NavLink>

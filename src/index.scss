@@ -19,6 +19,7 @@ html,body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 button {
@@ -54,7 +55,7 @@ a:active {
 	cursor: pointer;
 }
 section {
-	background: #12372A;
+	background: rgb(18, 55, 42);
 	color: #fbfada;
 	padding: 16px;
 	min-height: 100vh;

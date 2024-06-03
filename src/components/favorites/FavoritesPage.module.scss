@@ -9,6 +9,9 @@
 	color:#fbfada;
 }
 .favoriteEmpty {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	svg {
 		color: var(--primary-color);
 	}
