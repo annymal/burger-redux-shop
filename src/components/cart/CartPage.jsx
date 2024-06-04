@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 
 import { ShoppingBasket } from 'lucide-react'
 
-import { calculateTotals, removeItem } from '../../features/cart/cartSlice'
+import { calculateTotals, removeItem } from '../../store/reducers/cart/cartSlice'
 import CartItems from './CartItems'
 import styles from './CartPage.module.scss'
 

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
-import FoodItems from '../../../components/food/FoodItems'
+import db from '../../../../db.json'
 
 
 const initialState = {
-	foodItems: FoodItems,
+	foodItems: db.foodItems,
 	amount: 1,
 	total: 0
 }

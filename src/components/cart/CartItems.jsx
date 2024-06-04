@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
@@ -6,7 +6,7 @@ import {
 	increaseItem,
 	removeItem,
 	toggleChecked
-} from '../../features/cart/cartSlice'
+} from '../../store/reducers/cart/cartSlice'
 import styles from './CartItems.module.scss'
 
 const CartItems = ({ price, title, image, amount, id, isChecked }) => {

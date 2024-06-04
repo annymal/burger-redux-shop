@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 
 import { Heart, ShoppingBasket, Trash2 } from 'lucide-react'
 
-import { removeFavoriteItem } from '../../features/favorite/favoriteSlice'
+import { removeFavoriteItem } from '../../store/reducers/favorite/favoriteSlice'
 import styles from './FavoriteItems.module.scss'
 
 const FavoriteItems = ({ image, title, price, id }) => {
