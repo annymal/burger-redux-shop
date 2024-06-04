@@ -1,8 +1,13 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 const UserPage = () => {
   return (
-    <div>Привет, </div>
+    <div>
+      <h2>Привет, пользователь</h2>
+      <h3>Твоя история заказов:</h3>
+
+      </div>
   )
 }
 

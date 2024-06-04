@@ -24,6 +24,7 @@ const RegisterPage = () => {
 		}
 		setPasswordError(false)
 		dispatch(registerUser({ email, password, firstName }))
+		navigate('/login')
 	}
 
 	return (
@@ -63,7 +64,6 @@ const RegisterPage = () => {
 						</div>
 					)}
 					<button
-						onClick={() => navigate('/login')}
 						type='submit'
 						className={styles.submitBtn}
 					>

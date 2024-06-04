@@ -55,10 +55,12 @@
       "isChecked": false
     }
   ],
-  "login": [
-   
-  ],
   "users": [
-    
+    {
+      "id": "8cce",
+      "email": "test@mail.ru",
+      "password": "12",
+      "firstName": "dana"
+    }
   ]
 }
