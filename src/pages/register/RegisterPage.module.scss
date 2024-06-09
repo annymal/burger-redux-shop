@@ -9,6 +9,7 @@
   
   .formGroup {
     margin-bottom: 15px;
+    position: relative;
   }
   
   label {
@@ -39,4 +40,13 @@
   .error {
     color: red;
     margin-bottom: 10px;
+  }
+  .btnVisible {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background:none;
+  }
+  .psw {
+    position: relative;
   }

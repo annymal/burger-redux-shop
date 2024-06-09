@@ -4,12 +4,23 @@ import { useNavigate } from 'react-router-dom'
 
 import { registerUser } from '../../store/thunks/auth'
 import styles from './RegisterPage.module.scss'
+import { Eye } from 'lucide-react'
 
 const RegisterPage = () => {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 
 	const [passwordError, setPasswordError] = useState(false)
+	const [showPassword, setShowPassword] = useState(false)
+	const [showRepeatPassword, setShowRepeatPassword] = useState(false)
+
+	const togglePasswordVisibility = () => {
+		setShowPassword(!showPassword)
+	}
+
+	const toggleRepeatPasswordVisibility = () => {
+		setShowRepeatPassword(!showRepeatPassword)
+	}
 
 	const handleSubmit = e => {
 		e.preventDefault()
@@ -42,21 +53,23 @@ const RegisterPage = () => {
 					</div>
 					<div className={styles.formGroup}>
 						<label>Введите пароль</label>
-						<input
-							type='password'
+						<input className={styles.psw}
+							type={showPassword? 'text' : 'password'}
 							id='password'
 							name='password'
 							required
 						/>
+						<button className={styles.btnVisible} onClick={togglePasswordVisibility}><Eye /></button>
 					</div>
 					<div className={styles.formGroup}>
 						<label>Повторите пароль</label>
 						<input
-							type='password'
+							type={showRepeatPassword? 'text' : 'password'}
 							id='confirmPassword'
 							name='confirmPassword'
 							required
 						/>
+						<button className={styles.btnVisible} onClick={toggleRepeatPasswordVisibility}><Eye /></button>
 					</div>
 					{passwordError && (
 						<div className={styles.error}>
